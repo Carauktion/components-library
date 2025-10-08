@@ -1,0 +1,36 @@
+import { HTMLInputTypeAttribute, ReactNode } from 'react';
+type Props = {
+    className?: string;
+    inputClassName?: string;
+    label?: string;
+    subLabel?: string;
+    id?: string;
+    placeholder?: string;
+    name?: string;
+    type?: HTMLInputTypeAttribute;
+    isRequired?: boolean;
+    value?: string | number;
+    onChange?: (e: any) => void;
+    onInput?: (e: any) => void;
+    onKeyDown?: (e: any) => void;
+    onKeyUp?: (e: any) => void;
+    onFocus?: (e: any) => void;
+    onBlur?: (e: any) => void;
+    onBeforeInput?: (e: any) => void;
+    supportingText?: string;
+    supportingTextWidth?: number;
+    error?: any;
+    actionLabel?: string;
+    actionPosition?: 'left' | 'right';
+    onActionClick?: () => void;
+    disabled?: boolean;
+    withoutErrorMessage?: boolean;
+    icon?: ReactNode;
+    iconClassName?: string;
+    onIconClick?: () => void;
+    readOnly?: boolean;
+    warning?: string;
+};
+declare const TextInput: import('react').ForwardRefExoticComponent<Props & import('react').RefAttributes<HTMLInputElement>>;
+export default TextInput;
+//# sourceMappingURL=TextInput.d.ts.map

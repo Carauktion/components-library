@@ -1,0 +1,1 @@
+{"version":3,"file":"Portal.d.ts","sourceRoot":"","sources":["../../../src/components/Tooltip/Portal.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAA;AAG9B,KAAK,KAAK,GAAG;IACX,gBAAgB,CAAC,EAAE,OAAO,CAAA;IAC1B,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAA;CAC1B,CAAA;AAED,eAAO,MAAM,MAAM,EAAE,KAAK,CAAC,EAAE,CAAC,KAAK,CAmBlC,CAAA;AAED,eAAe,MAAM,CAAA"}

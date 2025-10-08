@@ -1,0 +1,36 @@
+.DatePickerContainer {
+  position: relative;
+}
+
+.DatePickerContainer div:last-child {
+  z-index: 40;
+}
+
+.DatePickerContainer > p {
+  display: none;
+}
+
+.DatePickerContainer input {
+  border-color: var(--color-light-3);
+}
+
+.DatePickerContainer input:hover {
+  border-color: var(--color-fo-accent);
+}
+
+.DatePickerContainer input:disabled {
+  border-color: var(--color-light-3);
+  background: var(--color-light-4-tint);
+}
+
+.DatePickerContainer input:hover:disabled {
+  background: var(--color-light-4-tint);
+}
+
+.DatePickerContainer svg {
+  fill: var(--color-medium);
+}
+
+.DatePickerContainer:hover svg {
+  fill: var(--color-fo-accent);
+}
