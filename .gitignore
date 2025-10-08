@@ -4,6 +4,7 @@ node_modules
 .DS_Store
 coverage
 .storybook/out
+storybook-static
 *.log
 .env
 .env.local
