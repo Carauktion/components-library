@@ -54,6 +54,46 @@ module.exports = {
 }
 ```
 
+## Versioning & Release
+
+This repo uses Changesets for managed, semver-based versioning. Versions are not bumped automatically — you decide when and how to release.
+
+1) Record changes you want to release
+
+```bash
+yarn changeset
+```
+
+- Pick the version type (patch/minor/major)
+- Write a short description
+
+2) Apply pending changesets and update versions/changelogs
+
+```bash
+yarn version-packages
+```
+
+3) Publish the new version
+
+```bash
+yarn release
+```
+
+Helpful commands
+
+```bash
+# Preview status of unreleased changes
+yarn changeset status
+
+# Create an empty changeset (then edit the generated file)
+yarn changeset add --empty
+
+# Optional: create snapshot prerelease versions
+yarn version:patch
+yarn version:minor
+yarn version:major
+```
+
 ## Notes
 
 - Node 22+, Yarn required.

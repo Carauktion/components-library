@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  plugins: [react(), dts({ include: ['src'] })],
+  plugins: [react(), dts({ include: ['src'], exclude: ['src/**/*.stories.tsx'], entryRoot: 'src' })],
   css: {
     preprocessorOptions: {
       scss: {

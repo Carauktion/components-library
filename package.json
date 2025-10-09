@@ -1,6 +1,6 @@
 {
   "name": "@carauktion/component-library",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "type": "module",
   "main": "./dist/index.cjs",
@@ -32,6 +32,9 @@
     "changeset": "changeset",
     "version-packages": "changeset version && yarn install",
     "release": "changeset publish",
+    "version:patch": "changeset version --snapshot patch",
+    "version:minor": "changeset version --snapshot minor",
+    "version:major": "changeset version --snapshot major",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "postinstall": "test -f patches/react-tailwindcss-datepicker+1.5.1.patch && patch-package || echo 'No patches to apply'"

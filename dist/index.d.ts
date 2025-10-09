@@ -26,6 +26,7 @@ export { default as Tabs } from './components/Tabs/Tabs';
 export { default as Textarea } from './components/Textarea/Textarea';
 export { default as TextInput } from './components/TextInput/TextInput';
 export { default as Tooltip } from './components/Tooltip/Tooltip';
+export { default as VersionInfo } from './components/VersionInfo/VersionInfo';
 export { ArrowType } from './components/Arrow/Arrow';
 export type { Message as MessageType } from './components/Message/Message';
 export type { Option } from './components/Select/Select';
@@ -34,4 +35,5 @@ export { TabStatus } from './components/Tabs/Tab/Tab';
 export type { TabProps } from './components/Tabs/Tab/Tab';
 export { LANGUAGES } from './enums/LANGUAGES';
 export { getCSSVariable } from './utils/getCSSVariable';
+export { getVersion, getPackageName } from './utils/version';
 //# sourceMappingURL=index.d.ts.map

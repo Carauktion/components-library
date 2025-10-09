@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    "resolveJsonModule": true
   },
   "include": ["src", ".storybook", "src/types"]
 }
