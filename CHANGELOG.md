@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.0
+
+### Minor Changes
+
+- f5bfdb9: Add storybook welcome page
+
+### Patch Changes
+
+- f5bfdb9: Added welcome page and versioning system to Storybook
+
 ## 0.1.1
 
 ### Patch Changes
@@ -24,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Enhanced Storybook with welcome page and version information
 
-## [0.1.0] 
+## [0.1.0]
 
 ### Added
 
