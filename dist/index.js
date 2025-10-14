@@ -15784,7 +15784,7 @@ const Ct = (e) => typeof window == "undefined" ? "" : getComputedStyle(document.
     });
   }, [y]);
   const S = (L) => {
-    k(L), e(L.startDate), !L.startDate && t && t();
+    k(L), e(L.startDate), (!L.startDate || L.startDate === "" || L.startDate === null) && t && t();
   }, F = () => {
     k({
       startDate: null,
@@ -15826,7 +15826,7 @@ const Ct = (e) => typeof window == "undefined" ? "" : getComputedStyle(document.
         containerClassName: K(r$.DatePickerContainer, b)
       }
     ),
-    t && !!w.startDate && /* @__PURE__ */ g.jsx(
+    t && w.startDate && w.startDate !== "" && /* @__PURE__ */ g.jsx(
       l_,
       {
         className: "cursor-pointer absolute right-3 top-3",

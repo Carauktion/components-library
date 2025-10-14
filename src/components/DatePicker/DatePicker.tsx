@@ -94,7 +94,8 @@ const DatePicker: FC<Props> = ({
     setValue(value)
     onChange(value.startDate)
     
-    if (!value.startDate && onErase) {
+    // Check if the input is manually cleared (empty string, null, or undefined)
+    if ((!value.startDate || value.startDate === '' || value.startDate === null) && onErase) {
       onErase()
     }
   }
@@ -140,7 +141,7 @@ const DatePicker: FC<Props> = ({
         }}
         containerClassName={cx(styles.DatePickerContainer, containerClass)}
       />
-      {onErase && !!value.startDate && (
+      {onErase && value.startDate && value.startDate !== '' && (
         <XMarkIcon
           className="cursor-pointer absolute right-3 top-3"
           height={16}
