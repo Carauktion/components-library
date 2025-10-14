@@ -93,6 +93,10 @@ const DatePicker: FC<Props> = ({
   const handleChange = (value: any) => {
     setValue(value)
     onChange(value.startDate)
+    
+    if (!value.startDate && onErase) {
+      onErase()
+    }
   }
 
   const handleErase = () => {

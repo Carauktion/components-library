@@ -15784,7 +15784,7 @@ const Ct = (e) => typeof window == "undefined" ? "" : getComputedStyle(document.
     });
   }, [y]);
   const S = (L) => {
-    k(L), e(L.startDate);
+    k(L), e(L.startDate), !L.startDate && t && t();
   }, F = () => {
     k({
       startDate: null,
@@ -21276,7 +21276,7 @@ const De = (e) => {
             {
               ref: N,
               className: K(
-                "peer h-10 bg-white border border-light-3 rounded py-[7px] px-[15px] text-dark w-full transition-colors duration-100 !outline-0 !outline-offset-0",
+                "peer h-[40px] bg-white border border-light-3 rounded py-[7px] px-[15px] text-dark w-full transition-colors duration-100 !outline-0 !outline-offset-0",
                 x && "border-danger outline !outline-[1px] outline-danger",
                 "hover:bg-fo-accent-tint hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent",
                 "focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent",
@@ -22080,7 +22080,7 @@ const t2 = (e) => {
       ] })
     ]
   }
-), r2 = "@carauktion/component-library", o2 = "0.1.1", Cg = {
+), r2 = "@carauktion/component-library", o2 = "0.2.0", Cg = {
   name: r2,
   version: o2
 }, s2 = () => Cg.version, i2 = () => Cg.name, C2 = ({ showPackageName: e = !1, className: t = "" }) => /* @__PURE__ */ g.jsxs("div", { className: `text-sm text-gray-600 ${t}`, children: [
