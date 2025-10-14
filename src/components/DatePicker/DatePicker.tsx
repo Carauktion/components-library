@@ -107,6 +107,11 @@ const DatePicker: FC<Props> = ({
     if (e.key === 'Enter' && onErase) {
       const target = e.target as HTMLInputElement
       if (target.value === '') {
+        // Update component state to match the cleared input
+        setValue({
+          startDate: null,
+          endDate: null,
+        })
         onErase()
       }
     }

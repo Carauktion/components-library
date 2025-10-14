@@ -15791,7 +15791,10 @@ const Ct = (e) => typeof window == "undefined" ? "" : getComputedStyle(document.
       endDate: null
     }), t == null || t();
   }, S = ($) => {
-    $.key === "Enter" && t && $.target.value === "" && t();
+    $.key === "Enter" && t && $.target.value === "" && (k({
+      startDate: null,
+      endDate: null
+    }), t());
   };
   return /* @__PURE__ */ g.jsxs("div", { className: K("max-w-[174px] relative", p), children: [
     i && /* @__PURE__ */ g.jsx("p", { className: "text-sm text-light-dark mb-1", children: i }),
