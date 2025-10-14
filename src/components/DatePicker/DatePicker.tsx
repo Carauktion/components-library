@@ -93,11 +93,6 @@ const DatePicker: FC<Props> = ({
   const handleChange = (value: any) => {
     setValue(value)
     onChange(value.startDate)
-    
-    // Check if the input is manually cleared (empty string, null, or undefined)
-    if ((!value.startDate || value.startDate === '' || value.startDate === null) && onErase) {
-      onErase()
-    }
   }
 
   const handleErase = () => {
@@ -108,39 +103,50 @@ const DatePicker: FC<Props> = ({
     onErase?.()
   }
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && onErase) {
+      const target = e.target as HTMLInputElement
+      if (target.value === '') {
+        onErase()
+      }
+    }
+  }
+
   return (
     <div className={cx('max-w-[174px] relative', className)}>
       {label && <p className="text-sm text-light-dark mb-1">{label}</p>}
-      <Datepicker
-        readOnly={false}
-        value={value}
-        onChange={handleChange}
-        disabled={disabled}
-        displayFormat={displayFormat}
-        startWeekOn={startWeekOn}
-        invalid={invalid}
-        invalidColor={invalidColor}
-        invalidText={invalidText}
-        emptyLabel={emptyLabel}
-        fillLabel={fillLabel}
-        i18n={i18n || locale}
-        accentColor={accentColor}
-        inputClassName={cx(
-          'fill-medium icon-fill-medium icon-hover-fill-fo-accent hover-border-fo-accent transition-colors duration-100 border-2 !outline-offset-0 active:outline active:!outline-[1px] active:outline-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent border-color-light-3 text-medium disabled:border-light-3 hover:disabled:border-light-3 disabled:bg-4-tint hover:border-2 hover:disabled:bg-4-tint',
-          (invalid || error) && 'outline !outline-[1px] outline-danger',
-          inputClass
-        )}
-        minDate={minDate}
-        maxDate={maxDate}
-        calendarColors={{
-          ...calendarColors,
-          hoverBgClass: cx(
-            calendarColors.hoverBgClass,
-            'hover:disabled:bg-background disabled:cursor-not-allowed'
-          ),
-        }}
-        containerClassName={cx(styles.DatePickerContainer, containerClass)}
-      />
+      <div onKeyDown={handleKeyDown}>
+        <Datepicker
+          readOnly={false}
+          value={value}
+          onChange={handleChange}
+          disabled={disabled}
+          displayFormat={displayFormat}
+          startWeekOn={startWeekOn}
+          invalid={invalid}
+          invalidColor={invalidColor}
+          invalidText={invalidText}
+          emptyLabel={emptyLabel}
+          fillLabel={fillLabel}
+          i18n={i18n || locale}
+          accentColor={accentColor}
+          inputClassName={cx(
+            'fill-medium icon-fill-medium icon-hover-fill-fo-accent hover-border-fo-accent transition-colors duration-100 border-2 !outline-offset-0 active:outline active:!outline-[1px] active:outline-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent border-color-light-3 text-medium disabled:border-light-3 hover:disabled:border-light-3 disabled:bg-4-tint hover:border-2 hover:disabled:bg-4-tint',
+            (invalid || error) && 'outline !outline-[1px] outline-danger',
+            inputClass
+          )}
+          minDate={minDate}
+          maxDate={maxDate}
+          calendarColors={{
+            ...calendarColors,
+            hoverBgClass: cx(
+              calendarColors.hoverBgClass,
+              'hover:disabled:bg-background disabled:cursor-not-allowed'
+            ),
+          }}
+          containerClassName={cx(styles.DatePickerContainer, containerClass)}
+        />
+      </div>
       {onErase && value.startDate && value.startDate !== '' && (
         <XMarkIcon
           className="cursor-pointer absolute right-3 top-3"
