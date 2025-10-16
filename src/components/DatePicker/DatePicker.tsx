@@ -103,11 +103,10 @@ const DatePicker: FC<Props> = ({
     onErase?.()
   }
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && onErase) {
+  const handleKeyUp = (e: React.KeyboardEvent) => {
+    if ((e.key === 'Backspace' || e.key === 'Delete') && onErase) {
       const target = e.target as HTMLInputElement
       if (target.value === '') {
-        // Update component state to match the cleared input
         setValue({
           startDate: null,
           endDate: null,
@@ -120,7 +119,7 @@ const DatePicker: FC<Props> = ({
   return (
     <div className={cx('max-w-[174px] relative', className)}>
       {label && <p className="text-sm text-light-dark mb-1">{label}</p>}
-      <div onKeyDown={handleKeyDown}>
+      <div onKeyUp={handleKeyUp}>
         <Datepicker
           readOnly={false}
           value={value}
