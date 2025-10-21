@@ -5,6 +5,7 @@ export { default as AccordionRow } from './components/Table/AccordionRow/Accordi
 export { default as Arrow } from './components/Arrow/Arrow'
 export { default as Button } from './components/Button/Button'
 export { default as Cell } from './components/Table/Row/Cell'
+export { default as Checkbox } from './components/Checkbox/Checkbox'
 export { default as ColumnSwitcher } from './components/Table/ColumnsView/ColumnSwitcher'
 export { default as ColumnsView } from './components/Table/ColumnsView/ColumnsView'
 export { default as DatePicker } from './components/DatePicker/DatePicker'
