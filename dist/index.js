@@ -10271,7 +10271,7 @@ const KS = () => /* @__PURE__ */ g.jsx("svg", { width: "9", height: "5", viewBox
               onChange: l,
               disabled: n,
               className: K(
-                "w-4 h-4 cursor-pointer appearance-none border-2 rounded transition-all",
+                "w-[16px] h-[16px] cursor-pointer appearance-none border-2 rounded transition-all",
                 "border-light-3 bg-white",
                 "checked:bg-primary checked:border-primary hover:checked:bg-primary hover:checked:border-primary",
                 'checked:bg-[url("data:image/svg+xml,%3csvg%20viewBox=%270%200%2016%2016%27%20fill=%27white%27%20xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath%20d=%27M12.207%204.793a1%201%200%20010%201.414l-5%205a1%201%200%2001-1.414%200l-2-2a1%201%200%20011.414-1.414L6.5%209.086l4.293-4.293a1%201%200%20011.414%200z%27/%3e%3c/svg%3e")]',
@@ -21767,7 +21767,7 @@ const De = (e) => {
           {
             className: "flex items-center text-dark cursor-pointer",
             onClick: i,
-            children: /* @__PURE__ */ g.jsx(Ew, { className: "w-4 h-4" })
+            children: /* @__PURE__ */ g.jsx(Ew, { className: "w-[16px] h-[16px]" })
           }
         ),
         s && /* @__PURE__ */ g.jsx(

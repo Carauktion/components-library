@@ -79,7 +79,7 @@ const PaginationBar: FC<Props> = ({
             className="flex items-center text-dark cursor-pointer"
             onClick={onListClick}
           >
-            <ListBulletIcon className="w-4 h-4" />
+            <ListBulletIcon className="w-[16px] h-[16px]" />
           </span>
         )}
         {onDocumentClick && (
