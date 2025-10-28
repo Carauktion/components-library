@@ -2,8 +2,9 @@
   position: relative;
 }
 
-.DatePickerContainer div:last-child {
+.DatePickerContainer > div:last-child {
   z-index: 40;
+  top: 100%;
 }
 
 .DatePickerContainer > p {
