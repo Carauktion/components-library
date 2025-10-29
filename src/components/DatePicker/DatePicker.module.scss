@@ -5,7 +5,16 @@
 .DatePickerContainer > div:last-child {
   z-index: 40;
   top: 100%;
+}
+
+.DatePickerContainer.directionLeft > div:last-child {
+  left: 0;
+  right: auto;
+}
+
+.DatePickerContainer.directionRight > div:last-child {
   right: 0;
+  left: auto;
 }
 
 .DatePickerContainer > p {

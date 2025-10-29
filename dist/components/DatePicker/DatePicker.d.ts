@@ -31,6 +31,7 @@ type Props = {
     initialValue?: string;
     error?: string;
     containerClass?: string;
+    direction?: 'left' | 'right';
 };
 declare const DatePicker: FC<Props>;
 export default DatePicker;

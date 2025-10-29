@@ -90,3 +90,19 @@ export const FrenchLocale = {
     onChange: (value: string) => console.log('Date selected:', value),
   },
 }
+
+export const DirectionLeft = {
+  args: {
+    label: 'Direction Left',
+    direction: 'left',
+    onChange: (value: string) => console.log('Date selected:', value),
+  },
+}
+
+export const DirectionRight = {
+  args: {
+    label: 'Direction Right',
+    direction: 'right',
+    onChange: (value: string) => console.log('Date selected:', value),
+  },
+}

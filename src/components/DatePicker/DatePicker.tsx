@@ -40,6 +40,7 @@ type Props = {
   initialValue?: string
   error?: string
   containerClass?: string
+  direction?: 'left' | 'right'
 }
 
 const DatePicker: FC<Props> = ({
@@ -72,6 +73,7 @@ const DatePicker: FC<Props> = ({
   initialValue,
   containerClass,
   error,
+  direction = 'left',
 }) => {
   const [value, setValue] = useState<{
     startDate: string | null
@@ -148,7 +150,11 @@ const DatePicker: FC<Props> = ({
               'hover:disabled:bg-background disabled:cursor-not-allowed'
             ),
           }}
-          containerClassName={cx(styles.DatePickerContainer, containerClass)}
+          containerClassName={cx(
+            styles.DatePickerContainer,
+            direction === 'left' ? styles.directionLeft : styles.directionRight,
+            containerClass
+          )}
         />
       </div>
       {onErase && value.startDate && value.startDate !== '' && (
