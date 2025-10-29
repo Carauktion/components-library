@@ -73,27 +73,19 @@ const TextInput = forwardRef<HTMLInputElement, Props>(
     ref
   ) => {
     return (
-      <div
-        className={twMerge('transition-all max-w-[257px] w-full', className)}
-      >
+      <div className={twMerge('transition-all max-w-[257px] w-full', className)}>
         {label && (
           <div className="flex items-center justify-between gap-2 mb-1.5">
             <label
               htmlFor={id}
-              className={cx(
-                'block text-light-dark text-sm',
-                disabled && '!text-light-3'
-              )}
+              className={cx('block text-light-dark text-sm', disabled && '!text-light-3')}
             >
               {label}
               {isRequired && <span className="text-danger"> *</span>}
             </label>
             {subLabel && (
               <span
-                className={cx(
-                  'block text-light text-sm truncate',
-                  disabled && '!text-light-3'
-                )}
+                className={cx('block text-light text-sm truncate', disabled && '!text-light-3')}
               >
                 {subLabel}
               </span>
@@ -104,7 +96,7 @@ const TextInput = forwardRef<HTMLInputElement, Props>(
           <input
             ref={ref}
             className={cx(
-              'peer h-[40px] bg-white border border-light-3 rounded py-[7px] px-[15px] text-dark w-full transition-colors duration-100 !outline-0 !outline-offset-0',
+              'peer h-[40px] bg-white border text-[16px] border-light-3 rounded py-[7px] px-[15px] text-dark w-full transition-colors duration-100 !outline-0 !outline-offset-0',
               error && 'border-danger outline !outline-[1px] outline-danger',
               'hover:bg-fo-accent-tint hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent',
               'focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent',
@@ -126,9 +118,7 @@ const TextInput = forwardRef<HTMLInputElement, Props>(
             onBeforeInput={onBeforeInput}
             disabled={disabled}
             readOnly={readOnly}
-            style={
-              supportingText ? { paddingLeft: supportingTextWidth + 7 } : {}
-            }
+            style={supportingText ? { paddingLeft: supportingTextWidth + 7 } : {}}
           />
           {supportingText && (
             <div
@@ -146,10 +136,7 @@ const TextInput = forwardRef<HTMLInputElement, Props>(
           )}
           {icon && (
             <div
-              className={cx(
-                'absolute z-10 top-2 right-4 cursor-pointer',
-                iconClassName
-              )}
+              className={cx('absolute z-10 top-2 right-4 cursor-pointer', iconClassName)}
               onClick={onIconClick}
             >
               {icon}
@@ -177,10 +164,7 @@ const TextInput = forwardRef<HTMLInputElement, Props>(
               >
                 <button
                   onClick={onActionClick}
-                  className={cx(
-                    'text-medium text-sm underline',
-                    disabled && '!text-light-3'
-                  )}
+                  className={cx('text-medium text-sm underline', disabled && '!text-light-3')}
                   disabled={disabled}
                 >
                   {actionLabel}
@@ -189,9 +173,7 @@ const TextInput = forwardRef<HTMLInputElement, Props>(
             )}
           </div>
         )}
-        {warning && (
-          <p className="text-warning text-xs mt-1 break-all">{warning}</p>
-        )}
+        {warning && <p className="text-warning text-xs mt-1 break-all">{warning}</p>}
       </div>
     )
   }
