@@ -21611,7 +21611,7 @@ const De = (e) => {
             "button",
             {
               type: "button",
-              className: "absolute cursor-pointer bottom-[4px] -translate-y-1/2 right-[28px] text-light-dark hover:text-medium z-20",
+              className: "absolute cursor-pointer bottom-[4px] -translate-y-1/2 right-[38px] text-light-dark hover:text-medium z-20",
               tabIndex: -1,
               onMouseDown: (y) => {
                 y.preventDefault(), y.stopPropagation(), l(null);
@@ -21868,38 +21868,38 @@ const jO = ({
   className: r = "",
   wrapperClassName: s = ""
 }) => {
-  var i;
-  return e.value === void 0 ? /* @__PURE__ */ g.jsx("div", {}) : /* @__PURE__ */ g.jsxs(
-    "div",
-    {
-      className: K(
-        "flex items-center justify-between gap-[20px] px-[8px]",
-        s
-      ),
-      children: [
-        e.filterType === pu.TextInput && /* @__PURE__ */ g.jsx(
-          Pg,
-          {
-            name: e.name,
-            value: e.value,
-            onChange: (o) => t(o.target.value),
-            className: `max-w-none ${r}`
-          }
-        ),
-        e.filterType === pu.Select && e.options && /* @__PURE__ */ g.jsx(
-          Cg,
-          {
-            className: `w-[100%] ${r}`,
-            selectedOption: ((i = e.options) == null ? void 0 : i.find((o) => o.value === e.value)) || null,
-            options: e.options,
-            placeholder: "Select an option",
-            onChange: (o) => t(o.value)
-          }
-        ),
-        n && /* @__PURE__ */ g.jsx("div", { className: "w-[1px] h-full bg-light-3" })
-      ]
-    }
-  );
+  var o;
+  if (e.value === void 0) return /* @__PURE__ */ g.jsx("div", {});
+  const i = /* @__PURE__ */ g.jsxs("svg", { width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: [
+    /* @__PURE__ */ g.jsx("path", { d: "M18 6L6 18", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round" }),
+    /* @__PURE__ */ g.jsx("path", { d: "M6 6L18 18", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round" })
+  ] });
+  return /* @__PURE__ */ g.jsxs("div", { className: K("flex items-center justify-between gap-[20px] px-[8px]", s), children: [
+    e.filterType === pu.TextInput && /* @__PURE__ */ g.jsx(
+      Pg,
+      {
+        name: e.name,
+        value: e.value,
+        onChange: (a) => t(a.target.value),
+        className: `max-w-none ${r}`,
+        inputClassName: e.value ? "pr-[42px]" : "",
+        icon: e.value ? i : void 0,
+        iconClassName: "top-3 right-4 text-light-dark hover:text-medium",
+        onIconClick: () => t("")
+      }
+    ),
+    e.filterType === pu.Select && e.options && /* @__PURE__ */ g.jsx(
+      Cg,
+      {
+        className: `w-[100%] ${r}`,
+        selectedOption: ((o = e.options) == null ? void 0 : o.find((a) => a.value === e.value)) || null,
+        options: e.options,
+        placeholder: "Select an option",
+        onChange: (a) => t(a.value)
+      }
+    ),
+    n && /* @__PURE__ */ g.jsx("div", { className: "w-[1px] h-full bg-light-3" })
+  ] });
 }, PO = ({ className: e = "", tableGrid: t, children: n }) => /* @__PURE__ */ g.jsx(
   "div",
   {

@@ -143,7 +143,7 @@ const Select: FC<Props> = ({
         {clearable && selectedOptions.length > 0 && (
           <button
             type="button"
-            className="absolute cursor-pointer bottom-[4px] -translate-y-1/2 right-[28px] text-light-dark hover:text-medium z-20"
+            className="absolute cursor-pointer bottom-[4px] -translate-y-1/2 right-[38px] text-light-dark hover:text-medium z-20"
             tabIndex={-1}
             onMouseDown={(e) => {
               e.preventDefault()
