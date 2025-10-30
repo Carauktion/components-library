@@ -21584,9 +21584,7 @@ const De = (e) => {
               title: b.map((y) => y.name).join(", ") || f,
               onKeyDown: (y) => {
                 if (!i) {
-                  const x = a.find(
-                    (w) => w.name[0].toLowerCase() === y.key.toLowerCase()
-                  );
+                  const x = a.find((w) => w.name[0].toLowerCase() === y.key.toLowerCase());
                   x && l(x);
                 }
               },
@@ -21604,35 +21602,38 @@ const De = (e) => {
                       /* @__PURE__ */ g.jsx("span", { className: "truncate min-w-0", children: b.map((y) => y.name).join(", ") })
                     ]
                   }
-                ) : /* @__PURE__ */ g.jsx(
-                  "span",
-                  {
-                    className: K("text-light-dark", p && "text-light-3"),
-                    children: f
-                  }
-                ),
-                /* @__PURE__ */ g.jsxs("span", { className: "absolute inset-y-0 right-0 flex items-center pr-[10px] z-10", children: [
-                  h && b.length > 0 ? /* @__PURE__ */ g.jsx(
-                    "button",
-                    {
-                      type: "button",
-                      className: "mr-1 text-light-dark hover:text-medium pointer-events-auto",
-                      onMouseDown: (y) => {
-                        y.preventDefault(), y.stopPropagation(), l(null);
-                      },
-                      onClick: (y) => {
-                        y.preventDefault(), y.stopPropagation();
-                      },
-                      "aria-label": "Clear selection",
-                      children: /* @__PURE__ */ g.jsxs("svg", { width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: [
-                        /* @__PURE__ */ g.jsx("path", { d: "M18 6L6 18", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round" }),
-                        /* @__PURE__ */ g.jsx("path", { d: "M6 6L18 18", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round" })
-                      ] })
-                    }
-                  ) : null,
-                  /* @__PURE__ */ g.jsx("span", { className: "pointer-events-none", children: /* @__PURE__ */ g.jsx(ln, { className: "h-4 w-4" }) })
-                ] })
+                ) : /* @__PURE__ */ g.jsx("span", { className: K("text-light-dark", p && "text-light-3"), children: f }),
+                /* @__PURE__ */ g.jsx("span", { className: "absolute inset-y-0 right-0 flex items-center pr-[10px] z-0 pointer-events-none", children: /* @__PURE__ */ g.jsx("span", { children: /* @__PURE__ */ g.jsx(ln, { className: "h-4 w-4" }) }) })
               ]
+            }
+          ),
+          h && b.length > 0 && /* @__PURE__ */ g.jsx(
+            "button",
+            {
+              type: "button",
+              className: "absolute cursor-pointer bottom-[4px] -translate-y-1/2 right-[28px] text-light-dark hover:text-medium z-20",
+              tabIndex: -1,
+              onMouseDown: (y) => {
+                y.preventDefault(), y.stopPropagation(), l(null);
+              },
+              onClick: (y) => {
+                y.preventDefault(), y.stopPropagation();
+              },
+              "aria-label": "Clear selection",
+              children: /* @__PURE__ */ g.jsxs(
+                "svg",
+                {
+                  width: "16",
+                  height: "16",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  xmlns: "http://www.w3.org/2000/svg",
+                  children: [
+                    /* @__PURE__ */ g.jsx("path", { d: "M18 6L6 18", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round" }),
+                    /* @__PURE__ */ g.jsx("path", { d: "M6 6L18 18", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round" })
+                  ]
+                }
+              )
             }
           ),
           /* @__PURE__ */ g.jsx(

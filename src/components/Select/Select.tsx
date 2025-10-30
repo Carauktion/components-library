@@ -97,22 +97,18 @@ const Select: FC<Props> = ({
             error &&
             'border-danger hover:bg-fo-accent-light hover:border-fo-accent focus:border-fo-accent outline !outline-[1px] outline-danger'
           }
-          ${
-            open && '!border-fo-accent outline !outline-[1px] outline-fo-accent'
-          }
+          ${open && '!border-fo-accent outline !outline-[1px] outline-fo-accent'}
           ${
             isDisabled &&
             '!bg-transparent !border !border-light-3-tint !text-light-3 !py-[7px] !px-[15px] hover:!outline-0 !cursor-not-allowed'
           }
-          ${(clearable && selectedOptions.length > 0) ? 'pr-[46px]' : 'pr-[30px]'}
+          ${clearable && selectedOptions.length > 0 ? 'pr-[46px]' : 'pr-[30px]'}
           ${inputClassName}`
           }
           title={selectedOptions.map((o) => o.name).join(', ') || placeholder}
           onKeyDown={(e: any) => {
             if (!selectedOption) {
-              const option = options.find(
-                (el) => el.name[0].toLowerCase() === e.key.toLowerCase()
-              )
+              const option = options.find((el) => el.name[0].toLowerCase() === e.key.toLowerCase())
 
               if (option) {
                 onChange(option)
@@ -126,51 +122,52 @@ const Select: FC<Props> = ({
                 'text-dark truncate flex items-center flex-nowrap gap-[6px] min-w-0',
                 isDisabled && 'text-light-3'
               )}
-              title={
-                selectedOptions.map((o) => o.name).join(', ') || placeholder
-              }
+              title={selectedOptions.map((o) => o.name).join(', ') || placeholder}
             >
               {beforeOptionName}
               <span className="truncate min-w-0">
-                {selectedOptions
-                  .map((option) => option.name)
-                  .join(', ')}
+                {selectedOptions.map((option) => option.name).join(', ')}
               </span>
             </span>
           ) : (
-            <span
-              className={cx('text-light-dark', isDisabled && 'text-light-3')}
-            >
+            <span className={cx('text-light-dark', isDisabled && 'text-light-3')}>
               {placeholder}
             </span>
           )}
-          <span className="absolute inset-y-0 right-0 flex items-center pr-[10px] z-10">
-            {clearable && selectedOptions.length > 0 ? (
-              <button
-                type="button"
-                className="mr-1 text-light-dark hover:text-medium pointer-events-auto"
-                onMouseDown={(e) => {
-                  e.preventDefault()
-                  e.stopPropagation()
-                  onChange(null)
-                }}
-                onClick={(e) => {
-                  e.preventDefault()
-                  e.stopPropagation()
-                }}
-                aria-label="Clear selection"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </button>
-            ) : null}
-            <span className="pointer-events-none">
+          <span className="absolute inset-y-0 right-0 flex items-center pr-[10px] z-0 pointer-events-none">
+            <span>
               <ChevronDownIcon className="h-4 w-4" />
             </span>
           </span>
         </ListboxButton>
+        {clearable && selectedOptions.length > 0 && (
+          <button
+            type="button"
+            className="absolute cursor-pointer bottom-[4px] -translate-y-1/2 right-[28px] text-light-dark hover:text-medium z-20"
+            tabIndex={-1}
+            onMouseDown={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              onChange(null)
+            }}
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}
+            aria-label="Clear selection"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+        )}
         <Transition
           as={Fragment}
           leave="transition ease-in duration-100"
