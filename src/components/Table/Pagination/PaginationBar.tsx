@@ -70,7 +70,7 @@ const PaginationBar: FC<Props> = ({
                 null
           }
           options={sizeOptions || defaultSizeOptions}
-          onChange={(option) => onSizeChange(parseInt(option.name))}
+          onChange={(option) => onSizeChange(parseInt((option?.name ?? currentSize).toString()))}
         />
       </div>
       <div className="flex items-center justify-center gap-[20px] mr-[30px]">

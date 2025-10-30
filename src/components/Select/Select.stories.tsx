@@ -1,7 +1,7 @@
 import Select from './Select'
 
 const options = [
-  { name: 'Durward Reynolds', unavailable: false },
+  { name: 'Durward Reynolds awdawdawd awd awd w', unavailable: false },
   { name: 'Kenton Towne', unavailable: false },
   { name: 'Therese Wunsch', unavailable: false },
   { name: 'Benedict Kessler', unavailable: true },
@@ -127,6 +127,17 @@ export const NoOptions = {
     options: [],
     selectedOption: null,
     noOptionsLabel: 'No options available',
+    onChange: (option: any) => console.log('Selected:', option),
+  },
+}
+
+export const Clearable = {
+  args: {
+    label: 'Clearable Select',
+    placeholder: 'Please select an option',
+    options,
+    selectedOption: options[0],
+    clearable: true,
     onChange: (option: any) => console.log('Selected:', option),
   },
 }

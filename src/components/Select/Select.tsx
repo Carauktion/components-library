@@ -29,13 +29,14 @@ type Props = {
   selectedOption: Option | Option[] | null
   options: Option[]
   error?: any
-  onChange: (option: Option) => void
+  onChange: (option: Option | null) => void
   label?: string
   placeholder?: string
   noOptionsLabel?: string
   required?: boolean
   isDisabled?: boolean
   multiple?: boolean
+  clearable?: boolean
 }
 
 const Select: FC<Props> = ({
@@ -56,6 +57,7 @@ const Select: FC<Props> = ({
   required,
   isDisabled = false,
   multiple = false,
+  clearable = false,
 }) => {
   const selectedOptions: Option[] = Array.isArray(selectedOption)
     ? selectedOption
@@ -88,7 +90,7 @@ const Select: FC<Props> = ({
       >
         <ListboxButton
           className={({ open }) =>
-            `${'relative w-full max-w-[572px] min-h-[40px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] pr-[30px] text-left transition-colors duration-100 !outline-offset-0 truncate'}
+            `${'relative w-full max-w-[572px] min-h-[40px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] text-left transition-colors duration-100 !outline-offset-0 truncate min-w-0'}
           ${'hover:bg-fo-accent-light hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent'}
           ${'focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-warning focus:outline focus:!outline-[1px] focus:outline-fo-accent'}
           ${
@@ -102,6 +104,7 @@ const Select: FC<Props> = ({
             isDisabled &&
             '!bg-transparent !border !border-light-3-tint !text-light-3 !py-[7px] !px-[15px] hover:!outline-0 !cursor-not-allowed'
           }
+          ${(clearable && selectedOptions.length > 0) ? 'pr-[46px]' : 'pr-[30px]'}
           ${inputClassName}`
           }
           title={selectedOptions.map((o) => o.name).join(', ') || placeholder}
@@ -120,7 +123,7 @@ const Select: FC<Props> = ({
           {selectedOptions.length > 0 ? (
             <span
               className={cx(
-                'text-dark truncate flex items-center flex-wrap gap-[6px]',
+                'text-dark truncate flex items-center flex-nowrap gap-[6px] min-w-0',
                 isDisabled && 'text-light-3'
               )}
               title={
@@ -128,24 +131,11 @@ const Select: FC<Props> = ({
               }
             >
               {beforeOptionName}
-              {selectedOptions.map((option, index) => (
-                <div
-                  className="flex flex-row gap-[10px] items-center"
-                  key={option.value}
-                >
-                  {option.image && (
-                    <img
-                      className="w-[20px] h-[20px] object-contain"
-                      src={option.image}
-                      alt={option.name}
-                    />
-                  )}
-                  <span className="truncate">
-                    {option.name}
-                    {index < selectedOptions.length - 1 && ','}
-                  </span>
-                </div>
-              ))}
+              <span className="truncate min-w-0">
+                {selectedOptions
+                  .map((option) => option.name)
+                  .join(', ')}
+              </span>
             </span>
           ) : (
             <span
@@ -154,8 +144,27 @@ const Select: FC<Props> = ({
               {placeholder}
             </span>
           )}
-          <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-[10px]">
-            <ChevronDownIcon className="h-4 w-4" />
+          <span className="absolute inset-y-0 right-0 flex items-center pr-[10px] z-10">
+            {clearable && selectedOptions.length > 0 ? (
+              <button
+                type="button"
+                className="mr-1 text-light-dark hover:text-medium pointer-events-auto"
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  onChange(null)
+                }}
+                aria-label="Clear selection"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </button>
+            ) : null}
+            <span className="pointer-events-none">
+              <ChevronDownIcon className="h-4 w-4" />
+            </span>
           </span>
         </ListboxButton>
         <Transition
