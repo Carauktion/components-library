@@ -21620,6 +21620,9 @@ const De = (e) => {
                       onMouseDown: (y) => {
                         y.preventDefault(), y.stopPropagation(), l(null);
                       },
+                      onClick: (y) => {
+                        y.preventDefault(), y.stopPropagation();
+                      },
                       "aria-label": "Clear selection",
                       children: /* @__PURE__ */ g.jsxs("svg", { width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: [
                         /* @__PURE__ */ g.jsx("path", { d: "M18 6L6 18", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round" }),
