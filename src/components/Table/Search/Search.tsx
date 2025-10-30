@@ -45,9 +45,9 @@ const Search: FC<Props> = ({
           value={item.value}
           onChange={(event) => onChange(event.target.value)}
           className={`max-w-none ${className}`}
-          inputClassName={item.value ? 'pr-[42px]' : ''}
+          inputClassName={item.value ? 'pr-[25px]' : ''}
           icon={item.value ? ClearIcon : undefined}
-          iconClassName="top-3 right-4 text-light-dark hover:text-medium"
+          iconClassName="top-3 right-[7px] text-light-dark hover:text-medium"
           onIconClick={() => onChange('')}
         />
       )}

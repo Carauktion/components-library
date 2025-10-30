@@ -21882,9 +21882,9 @@ const jO = ({
         value: e.value,
         onChange: (a) => t(a.target.value),
         className: `max-w-none ${r}`,
-        inputClassName: e.value ? "pr-[42px]" : "",
+        inputClassName: e.value ? "pr-[25px]" : "",
         icon: e.value ? i : void 0,
-        iconClassName: "top-3 right-4 text-light-dark hover:text-medium",
+        iconClassName: "top-3 right-[7px] text-light-dark hover:text-medium",
         onIconClick: () => t("")
       }
     ),
