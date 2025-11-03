@@ -11165,7 +11165,9 @@ const Z1 = () => /* @__PURE__ */ g.jsx("svg", { width: "9", height: "5", viewBox
     const Y = () => {
       if (!x.current)
         return !1;
-      const U = x.current.querySelector('[class*="overflow-auto"]');
+      const U = x.current.querySelector(
+        '[class*="overflow-auto"]'
+      );
       if (U)
         return M.current = U, N(!0), !0;
       if (y.current) {
@@ -11241,10 +11243,7 @@ const Z1 = () => /* @__PURE__ */ g.jsx("svg", { width: "9", height: "5", viewBox
     l && /* @__PURE__ */ g.jsxs(
       "label",
       {
-        className: J(
-          "block mb-1.5 text-sm text-light-dark truncate",
-          n
-        ),
+        className: J("block mb-1.5 text-sm text-light-dark truncate", n),
         title: l,
         children: [
           l,
@@ -11267,7 +11266,8 @@ const Z1 = () => /* @__PURE__ */ g.jsx("svg", { width: "9", height: "5", viewBox
               jm.Input,
               {
                 className: J(
-                  "relative w-full min-h-[40px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] pr-[45px] text-left transition-colors duration-100 !outline-offset-0 hover:bg-fo-accent-light hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent focus:outline-none focus:ring-0 focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent truncate",
+                  "relative w-full min-h-[40px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] pr-[25px] text-left transition-colors duration-100 !outline-offset-0 hover:bg-fo-accent-light hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent focus:outline-none focus:ring-0 focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent truncate",
+                  (t == null ? void 0 : t.name) && "pr-[45px]",
                   s && "border-2 border-primary-shade py-[6px] px-[14px] hover:bg-fo-accent-light hover:border-fo-accent focus:border-fo-accent",
                   d && "!bg-transparent !border !border-light-3-tint !text-light-3 !py-[7px] !pl-[15px] !pr-[45px]"
                 ),
@@ -11298,13 +11298,7 @@ const Z1 = () => /* @__PURE__ */ g.jsx("svg", { width: "9", height: "5", viewBox
                     viewBox: "0 0 9 5",
                     fill: "none",
                     xmlns: "http://www.w3.org/2000/svg",
-                    children: /* @__PURE__ */ g.jsx(
-                      "path",
-                      {
-                        d: "M4.13013 4.37044L0 0H8.26025L4.13013 4.37044Z",
-                        fill: "currentColor"
-                      }
-                    )
+                    children: /* @__PURE__ */ g.jsx("path", { d: "M4.13013 4.37044L0 0H8.26025L4.13013 4.37044Z", fill: "currentColor" })
                   }
                 )
               }
@@ -11323,28 +11317,22 @@ const Z1 = () => /* @__PURE__ */ g.jsx("svg", { width: "9", height: "5", viewBox
               }
             )
           ] }),
-          /* @__PURE__ */ g.jsx(
-            _v,
-            {
-              className: "absolute z-10 mt-[1px] max-w-[572px] max-h-[220px] w-full overflow-auto rounded-b-[3px] bg-white py-2 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
-              children: /* @__PURE__ */ g.jsx("div", { ref: y, children: r.length === 0 && w !== "" ? /* @__PURE__ */ g.jsx("div", { className: "relative cursor-default select-none py-2 px-4 text-light-dark", children: _ }) : /* @__PURE__ */ g.jsxs(g.Fragment, { children: [
-                r.map((Y) => /* @__PURE__ */ g.jsx(
-                  vv,
-                  {
-                    title: Y.name,
-                    value: Y,
-                    className: ({ focus: $ }) => `relative cursor-pointer select-none py-2 pl-[45px] pr-4 transition-colors duration-100 ${$ && "bg-fo-accent-tint"}`,
-                    children: ({ selected: $ }) => /* @__PURE__ */ g.jsxs(g.Fragment, { children: [
-                      /* @__PURE__ */ g.jsx("span", { className: "block truncate", children: Y.name }),
-                      $ && /* @__PURE__ */ g.jsx("span", { className: "absolute inset-y-0 left-0 flex items-center pl-3 text-fo-accent", children: /* @__PURE__ */ g.jsx(zo, { className: "h-4 w-4", "aria-hidden": "true" }) })
-                    ] })
-                  },
-                  Y.value
-                )),
-                h && /* @__PURE__ */ g.jsx("div", { className: "px-[10px] py-2 flex justify-center items-center", children: /* @__PURE__ */ g.jsx(ad, { className: "w-5 h-5" }) })
-              ] }) })
-            }
-          )
+          /* @__PURE__ */ g.jsx(_v, { className: "absolute z-10 mt-[1px] max-w-[572px] min-w-[259px] max-h-[220px] w-full overflow-auto rounded-b-[3px] bg-white py-2 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none", children: /* @__PURE__ */ g.jsx("div", { ref: y, children: r.length === 0 && w !== "" ? /* @__PURE__ */ g.jsx("div", { className: "relative cursor-default select-none py-2 px-4 text-light-dark", children: _ }) : /* @__PURE__ */ g.jsxs(g.Fragment, { children: [
+            r.map((Y) => /* @__PURE__ */ g.jsx(
+              vv,
+              {
+                title: Y.name,
+                value: Y,
+                className: ({ focus: $ }) => `relative cursor-pointer select-none py-2 pl-[45px] pr-4 transition-colors duration-100 ${$ && "bg-fo-accent-tint"}`,
+                children: ({ selected: $ }) => /* @__PURE__ */ g.jsxs(g.Fragment, { children: [
+                  /* @__PURE__ */ g.jsx("span", { className: "block truncate", children: Y.name }),
+                  $ && /* @__PURE__ */ g.jsx("span", { className: "absolute inset-y-0 left-0 flex items-center pl-3 text-fo-accent", children: /* @__PURE__ */ g.jsx(zo, { className: "h-4 w-4", "aria-hidden": "true" }) })
+                ] })
+              },
+              Y.value
+            )),
+            h && /* @__PURE__ */ g.jsx("div", { className: "px-[10px] py-2 flex justify-center items-center", children: /* @__PURE__ */ g.jsx(ad, { className: "w-5 h-5" }) })
+          ] }) }) })
         ] })
       }
     ),
