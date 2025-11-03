@@ -1,10 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import {
-  Combobox,
-  ComboboxButton,
-  ComboboxOption,
-  ComboboxOptions,
-} from '@headlessui/react'
+import { Combobox, ComboboxButton, ComboboxOption, ComboboxOptions } from '@headlessui/react'
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import cx from 'classnames'
 import Spinner from '../Spinner/Spinner'
@@ -67,8 +62,10 @@ const Autocomplete: React.FC<Props> = ({
         return false
       }
 
-      const scrollableElement = rootRef.current.querySelector('[class*="overflow-auto"]') as HTMLDivElement
-      
+      const scrollableElement = rootRef.current.querySelector(
+        '[class*="overflow-auto"]'
+      ) as HTMLDivElement
+
       if (scrollableElement) {
         optionsRef.current = scrollableElement
         setOptionsElementReady(true)
@@ -82,8 +79,9 @@ const Autocomplete: React.FC<Props> = ({
           const style = getComputedStyle(parent)
           const hasOverflowAuto = parent.classList.contains('overflow-auto')
           const overflowStyle = style.overflow === 'auto' || style.overflowY === 'auto'
-          const isScrollable = parent.scrollHeight > parent.clientHeight && style.overflow !== 'hidden'
-          
+          const isScrollable =
+            parent.scrollHeight > parent.clientHeight && style.overflow !== 'hidden'
+
           if (hasOverflowAuto || overflowStyle || isScrollable) {
             optionsRef.current = parent as HTMLDivElement
             setOptionsElementReady(true)
@@ -93,7 +91,7 @@ const Autocomplete: React.FC<Props> = ({
           depth++
         }
       }
-      
+
       setOptionsElementReady(false)
       return false
     }
@@ -125,12 +123,12 @@ const Autocomplete: React.FC<Props> = ({
   useEffect(() => {
     const checkAndSetup = () => {
       const optionsElement = optionsRef.current
-      
+
       if (!optionsElement || !onLoadMore || !hasMore) {
         isLoadingRef.current = false
         return false
       }
-      
+
       return true
     }
 
@@ -144,7 +142,7 @@ const Autocomplete: React.FC<Props> = ({
       if (isLoadingRef.current || isLoadingMore || !hasMore || !onLoadMore) {
         return
       }
-      
+
       isLoadingRef.current = true
       onLoadMore()
       setTimeout(() => {
@@ -170,11 +168,11 @@ const Autocomplete: React.FC<Props> = ({
       if (!element || isLoadingRef.current || isLoadingMore || !hasMore) {
         return
       }
-      
+
       const { scrollHeight, clientHeight, scrollTop } = element
       const distanceFromBottom = scrollHeight - scrollTop - clientHeight
       const threshold = 100
-      
+
       if (scrollHeight <= clientHeight + 10 || distanceFromBottom < threshold) {
         handleLoadMoreData()
       }
@@ -192,11 +190,11 @@ const Autocomplete: React.FC<Props> = ({
       if (!element || !hasMore || isLoadingMore || isLoadingRef.current) {
         return
       }
-      
+
       const { scrollTop, scrollHeight, clientHeight } = element
       const distanceFromBottom = scrollHeight - scrollTop - clientHeight
       const threshold = 100
-      
+
       if (distanceFromBottom < threshold) {
         handleLoadMoreData()
       }
@@ -234,10 +232,7 @@ const Autocomplete: React.FC<Props> = ({
     <div ref={rootRef} className={cx('relative max-w-[572px]', className)}>
       {label && (
         <label
-          className={cx(
-            'block mb-1.5 text-sm text-light-dark truncate',
-            labelClassName
-          )}
+          className={cx('block mb-1.5 text-sm text-light-dark truncate', labelClassName)}
           title={label}
         >
           {label}
@@ -261,7 +256,8 @@ const Autocomplete: React.FC<Props> = ({
           <div className="relative">
             <Combobox.Input
               className={cx(
-                'relative w-full min-h-[40px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] pr-[45px] text-left transition-colors duration-100 !outline-offset-0 hover:bg-fo-accent-light hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent focus:outline-none focus:ring-0 focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent truncate',
+                'relative w-full min-h-[40px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] pr-[25px] text-left transition-colors duration-100 !outline-offset-0 hover:bg-fo-accent-light hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent focus:outline-none focus:ring-0 focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent truncate',
+                selectedOption?.name && 'pr-[45px]',
                 error &&
                   'border-2 border-primary-shade py-[6px] px-[14px] hover:bg-fo-accent-light hover:border-fo-accent focus:border-fo-accent',
                 disabled &&
@@ -272,9 +268,7 @@ const Autocomplete: React.FC<Props> = ({
                 setQuery(event.target.value)
               }}
               placeholder={placeholder}
-              displayValue={(option: any) =>
-                Array.isArray(option) ? null : option?.name || ''
-              }
+              displayValue={(option: any) => (Array.isArray(option) ? null : option?.name || '')}
               onClick={() => buttonRef.current?.click()}
             />
             <ComboboxButton
@@ -291,10 +285,7 @@ const Autocomplete: React.FC<Props> = ({
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M4.13013 4.37044L0 0H8.26025L4.13013 4.37044Z"
-                  fill="currentColor"
-                />
+                <path d="M4.13013 4.37044L0 0H8.26025L4.13013 4.37044Z" fill="currentColor" />
               </svg>
             </ComboboxButton>
             {selectedOption?.name && (
@@ -313,9 +304,7 @@ const Autocomplete: React.FC<Props> = ({
               </ComboboxButton>
             )}
           </div>
-          <ComboboxOptions
-            className="absolute z-10 mt-[1px] max-w-[572px] max-h-[220px] w-full overflow-auto rounded-b-[3px] bg-white py-2 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-          >
+          <ComboboxOptions className="absolute z-10 mt-[1px] max-w-[572px] min-w-[259px] max-h-[220px] w-full overflow-auto rounded-b-[3px] bg-white py-2 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div ref={innerDivRef}>
               {options.length === 0 && query !== '' ? (
                 <div className="relative cursor-default select-none py-2 px-4 text-light-dark">
@@ -357,14 +346,9 @@ const Autocomplete: React.FC<Props> = ({
           </ComboboxOptions>
         </>
       </Combobox>
-      {error && (
-        <p className="text-danger text-xs mt-2.5">
-          {errorMsg || `${label} is required`}
-        </p>
-      )}
+      {error && <p className="text-danger text-xs mt-2.5">{errorMsg || `${label} is required`}</p>}
     </div>
   )
 }
 
 export default Autocomplete
-
