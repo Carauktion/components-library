@@ -1,6 +1,7 @@
 export { default as Accordion, AccordionGroup } from './components/Accordion/Accordion';
 export { default as AccordionRow } from './components/Table/AccordionRow/AccordionRow';
 export { default as Arrow } from './components/Arrow/Arrow';
+export { default as Autocomplete } from './components/Autocomplete/Autocomplete';
 export { default as Button } from './components/Button/Button';
 export { default as Cell } from './components/Table/Row/Cell';
 export { default as Checkbox } from './components/Checkbox/Checkbox';
@@ -31,6 +32,7 @@ export { default as VersionInfo } from './components/VersionInfo/VersionInfo';
 export { ArrowType } from './components/Arrow/Arrow';
 export type { Message as MessageType } from './components/Message/Message';
 export type { Option } from './components/Select/Select';
+export type { AutocompleteOption } from './components/Autocomplete/Autocomplete';
 export { SortState, FilterType } from './components/Table/Sort/Sort';
 export { TabStatus } from './components/Tabs/Tab/Tab';
 export type { TabProps } from './components/Tabs/Tab/Tab';
