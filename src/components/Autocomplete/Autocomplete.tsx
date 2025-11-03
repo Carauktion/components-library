@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { Combobox, ComboboxButton, ComboboxOption, ComboboxOptions } from '@headlessui/react'
-import { CheckIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { CheckIcon, ChevronDownIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import cx from 'classnames'
 import Spinner from '../Spinner/Spinner'
 
@@ -278,15 +278,7 @@ const Autocomplete: React.FC<Props> = ({
               )}
               ref={buttonRef}
             >
-              <svg
-                width="9"
-                height="5"
-                viewBox="0 0 9 5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M4.13013 4.37044L0 0H8.26025L4.13013 4.37044Z" fill="currentColor" />
-              </svg>
+              <ChevronDownIcon className="h-4 w-4" />
             </ComboboxButton>
             {selectedOption?.name && (
               <ComboboxButton
