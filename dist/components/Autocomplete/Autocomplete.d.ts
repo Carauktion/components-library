@@ -20,6 +20,7 @@ type Props = {
     hasMore?: boolean;
     isLoadingMore?: boolean;
     noResultsLabel?: string;
+    clearable?: boolean;
 };
 declare const Autocomplete: React.FC<Props>;
 export default Autocomplete;

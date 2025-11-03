@@ -27,6 +27,7 @@ type Props = {
   hasMore?: boolean
   isLoadingMore?: boolean
   noResultsLabel?: string
+  clearable?: boolean
 }
 
 const Autocomplete: React.FC<Props> = ({
@@ -47,6 +48,7 @@ const Autocomplete: React.FC<Props> = ({
   hasMore = false,
   isLoadingMore = false,
   noResultsLabel = 'No results found',
+  clearable = true,
 }) => {
   const buttonRef = useRef<HTMLButtonElement>(null)
   const optionsRef = useRef<HTMLDivElement>(null)
@@ -257,7 +259,7 @@ const Autocomplete: React.FC<Props> = ({
             <Combobox.Input
               className={cx(
                 'relative w-full min-h-[40px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] pr-[25px] text-left transition-colors duration-100 !outline-offset-0 hover:bg-fo-accent-light hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent focus:outline-none focus:ring-0 focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent truncate',
-                selectedOption?.name && 'pr-[45px]',
+                selectedOption?.name && clearable && 'pr-[45px]',
                 error &&
                   'border-2 border-primary-shade py-[6px] px-[14px] hover:bg-fo-accent-light hover:border-fo-accent focus:border-fo-accent',
                 disabled &&
@@ -280,7 +282,7 @@ const Autocomplete: React.FC<Props> = ({
             >
               <ChevronDownIcon className="h-4 w-4" />
             </ComboboxButton>
-            {selectedOption?.name && (
+            {selectedOption?.name && clearable && (
               <ComboboxButton
                 className={cx(
                   'absolute inset-y-0 flex justify-end items-center right-[25px]',
