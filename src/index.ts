@@ -1,9 +1,9 @@
 import './styles.css'
 
+export { default as Autocomplete } from './components/Autocomplete/Autocomplete'
 export { default as Accordion, AccordionGroup } from './components/Accordion/Accordion'
 export { default as AccordionRow } from './components/Table/AccordionRow/AccordionRow'
 export { default as Arrow } from './components/Arrow/Arrow'
-export { default as Autocomplete } from './components/Autocomplete/Autocomplete'
 export { default as Button } from './components/Button/Button'
 export { default as Cell } from './components/Table/Row/Cell'
 export { default as Checkbox } from './components/Checkbox/Checkbox'
