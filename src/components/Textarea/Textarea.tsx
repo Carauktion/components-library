@@ -50,7 +50,7 @@ const Textarea: FC<Props> = ({
       )}
       <textarea
         className={cx(
-          'min-h-[148px] bg-white border text-[14px] border-light-3 rounded py-[7px] px-[15px] text-base text-dark w-full transition-colors duration-100 !outline-offset-0',
+          'min-h-[148px] bg-white border text-[14px] border-light-3 rounded py-[7px] px-[15px] text-dark w-full transition-colors duration-100 !outline-offset-0',
           error && '!border-danger outline !outline-[0.5px] !outline-danger',
           'hover:bg-fo-accent-light hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent',
           'focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent',
