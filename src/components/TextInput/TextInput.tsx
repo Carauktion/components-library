@@ -96,7 +96,7 @@ const TextInput = forwardRef<HTMLInputElement, Props>(
           <input
             ref={ref}
             className={cx(
-              'peer h-[40px] bg-white border text-[16px] border-light-3 rounded py-[7px] px-[15px] text-dark w-full transition-colors duration-100 !outline-0 !outline-offset-0',
+              'peer h-[40px] bg-white border text-[14px] border-light-3 rounded py-[7px] px-[15px] text-dark w-full transition-colors duration-100 !outline-0 !outline-offset-0',
               error && 'border-danger outline !outline-[1px] outline-danger',
               'hover:bg-fo-accent-tint hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent',
               'focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent',

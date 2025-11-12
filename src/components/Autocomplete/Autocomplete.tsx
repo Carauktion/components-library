@@ -258,7 +258,7 @@ const Autocomplete: React.FC<Props> = ({
           <div className="relative">
             <Combobox.Input
               className={cx(
-                'relative w-full min-h-[40px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] pr-[25px] text-left transition-colors duration-100 !outline-offset-0 hover:bg-fo-accent-light hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent focus:outline-none focus:ring-0 focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent truncate',
+                'relative w-full min-h-[40px] text-[14px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] pr-[25px] text-left transition-colors duration-100 !outline-offset-0 hover:bg-fo-accent-light hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent focus:outline-none focus:ring-0 focus:border-fo-accent focus:outline focus:!outline-[1px] focus:outline-fo-accent truncate',
                 selectedOption?.name && clearable && 'pr-[45px]',
                 error &&
                   'border-2 border-primary-shade py-[6px] px-[14px] hover:bg-fo-accent-light hover:border-fo-accent focus:border-fo-accent',
@@ -312,7 +312,7 @@ const Autocomplete: React.FC<Props> = ({
                       title={option.name}
                       value={option}
                       className={({ focus }) =>
-                        `relative cursor-pointer select-none py-2 pl-[45px] pr-4 transition-colors duration-100 ${
+                        `relative cursor-pointer select-none text-[14px] py-2 pl-[45px] pr-4 transition-colors duration-100 ${
                           focus && 'bg-fo-accent-tint'
                         }`
                       }

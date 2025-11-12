@@ -90,7 +90,7 @@ const Select: FC<Props> = ({
       >
         <ListboxButton
           className={({ open }) =>
-            `${'relative w-full max-w-[572px] min-h-[40px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] text-left transition-colors duration-100 !outline-offset-0 truncate min-w-0'}
+            `${'relative w-full max-w-[572px] text-[14px] min-h-[40px] border border-light-3 cursor-pointer rounded-[3px] bg-white py-[7px] pl-[15px] text-left transition-colors duration-100 !outline-offset-0 truncate min-w-0'}
           ${'hover:bg-fo-accent-light hover:border-fo-accent hover:outline hover:!outline-[1px] hover:outline-fo-accent'}
           ${'focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-warning focus:outline focus:!outline-[1px] focus:outline-fo-accent'}
           ${
@@ -189,7 +189,7 @@ const Select: FC<Props> = ({
                     title={option.name}
                     disabled={option.unavailable}
                     className={({ focus }) =>
-                      `relative cursor-pointer select-none py-2 pl-[35px] pr-4 transition-colors duration-100 ${
+                      `relative cursor-pointer select-none text-[14px] py-2 pl-[35px] pr-4 transition-colors duration-100 ${
                         focus && 'bg-fo-accent-tint'
                       }
                   ${optionClassName}`
